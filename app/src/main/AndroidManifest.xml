@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="org.almiso.exchangerates">
 
+    <!--Permissions-->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".businesslayer.App"
         android:allowBackup="true"
@@ -12,12 +15,21 @@
         android:theme="@style/AppTheme"
     >
 
-        <activity android:name=".businesslayer.activities.MainActivity">
+
+        <!--Activities-->
+        <activity android:name=".businesslayer.activities.MainActivity"/>
+
+
+        <!--Aliases-->
+        <activity-alias
+            android:name="Launcher"
+            android:targetActivity=".businesslayer.activities.MainActivity"
+        >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-        </activity>
+        </activity-alias>
+
     </application>
 </manifest>

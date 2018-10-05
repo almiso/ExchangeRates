@@ -71,5 +71,7 @@ abstract class AbstractPresenter<C : AbstractPresenter.IController> {
     /*
      * Protected methods
      */
+    protected fun getController() = mController
+
     protected fun <V : IView<*>> view(clazz: Class<V>): V = mViews[clazz]
 }
