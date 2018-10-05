@@ -1,7 +1,10 @@
 package org.almiso.exchangerates.presentationlayer.views.implementations
 
+import android.app.Activity
 import android.content.Context
+import android.support.annotation.IdRes
 import android.util.AttributeSet
+import android.view.View
 import android.widget.RelativeLayout
 import org.almiso.exchangerates.presentationlayer.views.IView
 
