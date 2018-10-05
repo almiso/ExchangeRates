@@ -1,4 +1,4 @@
-package org.almiso.exchangerates
+package org.almiso.exchangerates.businesslayer.activities
 
 import android.os.Bundle
 import org.almiso.exchangerates.businesslayer.activities.AbstractActivity
