@@ -21,8 +21,8 @@ open class RateResponseDeserializer : JsonDeserializer<RatesResponse> {
 
             for (entry in data.entrySet()) {
                 val rate = Rate()
-                rate.title = entry.key
-                rate.value = entry.value.asDouble
+                rate.currency = entry.key
+                rate.amount = entry.value.asDouble
                 response.rates!!.add(rate)
             }
         }

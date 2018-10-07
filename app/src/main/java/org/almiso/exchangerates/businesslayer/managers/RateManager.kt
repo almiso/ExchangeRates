@@ -1,9 +1,12 @@
 package org.almiso.exchangerates.businesslayer.managers
 
+import android.text.TextUtils
 import android.util.Log
 import org.almiso.exchangerates.businesslayer.managers.events.AbstractEvent
 import org.almiso.exchangerates.businesslayer.managers.events.RatesEvent
 import org.almiso.exchangerates.businesslayer.network.RateRepository
+import org.almiso.exchangerates.objects.Rate
+import org.almiso.exchangerates.objects.RatesResponse
 import org.greenrobot.eventbus.EventBus
 import rx.Observable
 import rx.Subscription
@@ -33,9 +36,9 @@ open class RateManager(repository: RateRepository) {
     /*
      * Public methods
      */
-    fun startUpdating() {
+    fun startUpdating(currency: String) {
         mSubscription.unsubscribe()
-        mSubscription = mRepository.loadRates()
+        mSubscription = mRepository.loadRates(currency)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .repeatWhen { completed -> completed.delay(REPEAT_DELAY, TimeUnit.SECONDS) }

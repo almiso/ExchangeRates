@@ -1,6 +1,10 @@
 package org.almiso.exchangerates.objects
 
 open class Rate {
-    var title: String? = null
-    var value: Double = 0.0
+    var currency: String? = null
+    var amount: Double = 0.0
+
+    override fun toString(): String {
+        return "currency$currency, amount: $amount"
+    }
 }

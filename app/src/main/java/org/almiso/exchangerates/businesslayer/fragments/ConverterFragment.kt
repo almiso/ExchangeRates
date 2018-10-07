@@ -12,7 +12,6 @@ import org.almiso.exchangerates.businesslayer.managers.events.RatesEvent
 import org.almiso.exchangerates.presentationlayer.presenters.ConverterPresenter
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
-import rx.Subscription
 import javax.inject.Inject
 
 open class ConverterFragment : BaseFragment() {
@@ -61,8 +60,8 @@ open class ConverterFragment : BaseFragment() {
         /*
          * Implemented methods
          */
-        override fun startUpdating() {
-            mRateManager.startUpdating()
+        override fun startUpdating(currency: String) {
+            mRateManager.startUpdating(currency)
         }
 
         override fun stopUpdating() {
